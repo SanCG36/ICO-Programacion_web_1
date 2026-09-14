@@ -69,8 +69,75 @@ aside{
 	height: fit-content;
 }
 
+main article img{
+	width: 100%;
+	max-width: 400px;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+	display: block;
+}
+
 aside ol{
 	padding-left: 20px;
+}
+
+/* --- Nav vertical dentro del aside --- */
+aside nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+aside nav ul li a{
+	display: block;
+	color: #f1e4e4;
+	text-decoration: none;
+	padding: 8px 10px;
+	border-radius: 10px;
+	background-color: #2b2b2b;
+}
+
+aside nav ul li a:hover{
+	background-color: #c9302c;
+}
+
+/* --- Tabla de servicios --- */
+table{
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+
+th, td{
+	text-align: left;
+	padding: 10px;
+	border-bottom: 1px solid #f1e4e4;
+}
+
+th{
+	background-color: #2b2b2b;
+	color: #f1e4e4;
+}
+
+tr:nth-child(even){
+	background-color: #a83a37;
+}
+
+/* --- Bloque informativo dentro del aside --- */
+.aside-footer{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background-color: #2b2b2b;
+	color: #f1e4e4;
+	padding: 12px;
+	border-radius: 15px;
+	margin-top: 15px;
+	font-size: 0.9em;
 }
 
 footer{
@@ -84,4 +151,16 @@ footer{
 	justify-content: center;
 	align-items: center;
 	margin-top:15px;
+}
+
+.proyecto{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.proyecto section{
+	margin:15px
+}
+h3{
+	text-align: center;
 }

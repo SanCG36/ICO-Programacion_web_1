@@ -5,39 +5,58 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Desarrollo</title>
-		<link rel="stylesheet" href="style.css">	
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="favicon.png" type="image/png">
 	</head>
 	<body>
-		<header>
-			<div class="logo">
-				<h1>Mi pagina</h1>	
+		<div class="container">
+			<header>
+				<div class="logo">
+					<h1>Mi pagina</h1>	
+				</div>
+
+				<nav>
+					<ul>
+						<li><a href="#inicio">Inicio</a></li>
+						<li><a href="./servicios.html">Servicios</a></li>
+						<li><a href="./proyectos.html">Proyectos</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<div class="layout">
+				<main>
+					<article id="inicio" class="inicio">
+
+						<h2>Bienvenidos a mi pagina web</h2>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, quidem inventore necessitatibus maxime praesentium alias cum earum, obcaecati tempore repellendus delectus provident dolorum fugiat. Dolorem error eligendi soluta doloribus vitae.</p>
+
+					</article>
+					<article>
+						<h2>Proyectos</h2>
+						<p>Algunos de nuestros mejores proyectos</p>
+						<a href="./proyectos.html">Ver todos los proyectos →</a>
+					</article>
+				</main>
+				<aside class="servicios">
+					<article>
+						<h2>Servicios</h2>	
+						<ol>
+							<li>Diseño Web</li>
+							<li>Consulta recnologica</li>
+							<li>Servicios de infrastructura</li>
+						</ol>
+					</article>
+					<article id="contacto" class="contacto">
+						<h2>Contacto</h2>
+						<p>Cualquier duda, comentario o inconvemiente mande mensaje a <a href="mailto:elgato@aragon.unam.mx">elgato@aragon.unam.mx</a></p>
+					</article>
+				</aside>
 			</div>
-
-			<nav>
-				<ul>
-					<li><a href="">Inicio</a></li>
-					<li><a href="">Servicios</a></li>
-					<li><a href="">Contacto</a></li>
-				</ul>
-			</nav>
-		</header>
-
-		<section class="inicio">
-			<h2>Bienvenidos a mi pagina web</h2>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, quidem inventore necessitatibus maxime praesentium alias cum earum, obcaecati tempore repellendus delectus provident dolorum fugiat. Dolorem error eligendi soluta doloribus vitae.</p>
-		</section>
-
-		<section class="servicios">
-			<h2>Servicios</h2>	
-			<ul>
-				<li>Diseño Web</li>
-				<li>Consulta recnologica</li>
-				<li>Servicios de infrastructura</li>
-			</ul>
-		</section>
-
-		<footer class="contacto">	
-			<p>2026 Mi pagina web. Todos los derechos reservados XD</p>
-		</footer>
+			<footer class="contacto">	
+				<p>2026 Mi pagina web. Todos los derechos reservados XD</p>
+			</footer>
+		</div>
 	</body>
 </html>

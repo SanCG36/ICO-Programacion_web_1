@@ -45,7 +45,7 @@ h2{
 
 .layout{
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	grid-template-columns: 1fr 2fr;
 	gap: 25px;
 	margin-top: 25px;
 	padding: 0 25px;
@@ -71,6 +71,40 @@ aside{
 
 aside ol{
 	padding-left: 20px;
+}
+
+/* --- Tabla de servicios --- */
+table{
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+
+th, td{
+	text-align: left;
+	padding: 10px;
+	border-bottom: 1px solid #f1e4e4;
+}
+
+th{
+	background-color: #2b2b2b;
+	color: #f1e4e4;
+}
+
+tr:nth-child(even){
+	background-color: #a83a37;
+}
+
+.aside-footer{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background-color: #2b2b2b;
+	color: #f1e4e4;
+	padding: 12px;
+	border-radius: 15px;
+	margin-top: 15px;
+	font-size: 0.9em;
 }
 
 footer{
