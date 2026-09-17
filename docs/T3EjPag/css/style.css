@@ -2,26 +2,38 @@ body{
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	margin: 0px;
 	padding: 0px;
-	background-color: #d9c7c7;
+	background-color: #f2e9e9;
 }
 
 header{
-	background-color: #2b2b2b;
+	background-color: #1f1f1f;
 	color: #f1e4e4;
-	padding: 10px 0px;
+	padding: 0px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 header .logo h1 {
-	margin: 0px;
-	padding-left: 25px;
+	margin: auto;
+	padding-right: 25px;
+}
+
+header .logo a {
+	display: flex;
+	text-decoration: none;
+	color: #f1e4e4;
+}
+
+header .logo img{
+	max-height: 75px;
+	max-width: 75px;
+	margin: 0;
 }
 
 nav ul{
 	list-style-type: none ;
-	margin: 0px;	
+	margin: 0px;
 	padding-right:25px ;
 }
 
@@ -40,7 +52,7 @@ nav ul li a:hover{
 }
 
 h2{
-	color:#2b2b2b;
+	color: #f1e4e4;
 }
 
 .layout{
@@ -54,7 +66,7 @@ h2{
 main article{
 	padding: 20px;
 	border-radius: 25px;
-	background-color: #c9302c;
+	background-color: #6e0f0f;
 	color: #f8f0f0;
 	box-shadow: 0 2px 8px rgba(43, 43, 43, 0.4);
 	margin-bottom: 25px;
@@ -62,7 +74,7 @@ main article{
 
 aside{
 	padding: 20px;
-	background-color: #a83a37;
+	background-color: #4a0a0a;
 	color: #f8f0f0;
 	box-shadow: 0 2px 8px rgba(43, 43, 43, 0.4);
 	border-radius: 25px;
@@ -74,8 +86,8 @@ aside ol{
 }
 
 footer{
-	background-color: #2b2b2b;
-	color: #d9534f;
+	background-color: #1f1f1f;
+	color: #f2e9e9;
 	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
 	text-align: center;
 	padding: 25px;
@@ -84,4 +96,45 @@ footer{
 	justify-content: center;
 	align-items: center;
 	margin-top:15px;
+}
+.container{
+	width: 100%;
+	height: 100%;
+	margin:0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.anuncio{
+	align-items: center;
+	text-align: center;
+	background-color: #335;
+	border-radius: 3.5em 5px;
+	margin: 2em;
+	border-style: dashed;
+}
+
+.anuncio img{
+	max-width: 150px;
+	border: 5px solid #510;
+	margin: 0 15px;
+}
+
+.anuncio h3{
+	background-color: #222;
+	width: 100%;
+	margin-left: 0;
+	border-top-left-radius: 1.5em;
+	padding: 5px 0px;
+}
+
+.anuncio p{
+	margin-bottom: 0;
+	border-bottom-right-radius: 5.5em;
+	text-align: inherit;
+	border-right-style: dashed;
+	background-color: #222;
 }

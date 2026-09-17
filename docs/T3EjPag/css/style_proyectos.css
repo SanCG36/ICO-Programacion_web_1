@@ -1,0 +1,81 @@
+.layout{
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 30px;
+	margin-top: 25px;
+	padding: 0 25px;
+}
+
+aside{
+	height: 100%;
+}
+
+aside h2{
+	margin-bottom: 0;
+	color:azure;
+}
+
+aside nav ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	text-align: center;
+}
+
+aside nav ul li a{
+	display: block;
+	color: #cdf;
+	text-decoration: none;
+	padding: 8px 10px;
+	border-radius: 10px;
+	background-color: #2b2b2b;
+}
+
+aside nav ul li a:hover{
+	background-color: #0f6e6e;
+}
+
+.aside-footer{
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	background-color: #1f1f1f;
+	color: #f1e4e4;
+	padding: 12px;
+	border-radius: 15px;
+	margin-top: 15px;
+	font-size: 0.9em;
+}
+
+.proyecto{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap:15px;
+	align-items: center;
+	text-align: justify;
+}
+
+.proyecto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: -10px 0px 20px 4px #112F;
+}
+
+.addlinux img{
+	height: auto;
+	min-height: 250px;
+	min-width:200px;
+	max-width: 100%;
+	/* margin: 50px 15px; */
+	border: 15px solid #444;
+	border-radius: 15px;
+}
+
+.addlinux{
+	margin:70px 15px ;
+}
