@@ -1,0 +1,9 @@
+-- IP: 127.0.0
+-- CREATE DATABASE IF NOT EXISTS crud_app;
+-- USE crud_app;
+CREATE TABLE usuarios(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nombre VARCHAR(100) NOT NULL,
+	email VARCHAR(100),
+	telefono VARCHAR(15) NOT NULL
+);

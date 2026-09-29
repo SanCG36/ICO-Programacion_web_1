@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Formulario</title>
+		<!-- <link href="css/style.css" rel="stylesheet"> -->
+	</head>
+
+	<body>
+			<h1>Agregar Usuario</h1>
+			<fieldset>
+			<form action="Controlador/insertar.php" method="post">
+				<label for="nombre">Nombre: </label>
+				<input type="text" name="nombre" value="" maxlength="150" placeholder="Santiago CG" required>
+				<br><br>
+				<label for="email">Email:</label>
+				<input type="email" name="email" value="" maxlength="150" placeholder="Ingresa Correo" required>
+				<br><br>
+				<label for="telefono">Telefono</label>
+				<input type="number" name="telefono" value="" maxlength="15" placeholder="561342626666" required>
+				<br><br>
+				<button type="submit">Registrar</button>
+			</form>
+			</fieldset>
+	</body>
+</html>
