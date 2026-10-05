@@ -1,0 +1,14 @@
+label{
+	display: block;
+	margin: 5px;
+}
+
+p{
+	display: inline;
+	margin-right: 15px;
+	padding: 0px 10px;
+}
+
+label input{
+	margin-left: 5px;
+}
