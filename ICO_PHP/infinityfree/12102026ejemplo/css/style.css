@@ -1,4 +1,5 @@
 .form_registro input{
 	display: block;
 	margin-bottom: 15px;
+	color: hsl(12,45,12);
 }
