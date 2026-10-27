@@ -39,7 +39,7 @@
 						<td><?= htmlspecialchars($a['created_at'])?></td>
 						<td>
 							<a href="edit.php?id=<?= htmlspecialchars($a['id'])?>">Editar</a>
-							<a href="delete.php?id=<?= htmlspecialchars($a['id'])?>" onclick=" return confirm('¿Quieres eliminar el registro?')">Editar</a>
+							<a href="delete.php?id=<?= htmlspecialchars($a['id'])?>" onclick=" return confirm('¿Quieres eliminar el registro?')">Eliminar</a>
 						</td>
 					</tr>
 				<?php endforeach;?>
