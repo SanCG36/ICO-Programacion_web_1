@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Escuela</title>
+    <link href="../css/estilos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <fieldset>
+        <legend>Registro de alumnos</legend>
+        <form method="post" action="guardar.php" class="form_registro">
+          <label for="nombre"
+            >Nombre:
+            <input
+              type="text"
+              name="nombre"
+              maxlength="150"
+              required
+              placeholder="Santiago Joestar"
+            />
+          </label>
+          <label for="correo"
+            >Correo:
+            <input
+              type="email"
+              name="correo"
+              required
+              placeholder="mandarino@gmail.com"
+            />
+          </label>
+          <label for="edad"
+            >Edad:
+            <input type="number" name="edad" required placeholder="20" />
+          </label>
+          <label for="carrera"
+            >Carrera:
+            <input
+              type="text"
+              name="carrera"
+              required
+              placeholder="Ingenieria en computación"
+            />
+          </label>
+          <button type="submit">Regidtrar</button>
+        </form>
+      </fieldset>
+
+      <section>
+        <fieldset>
+          <legend>Consultar alumnos</legend>
+          <form method="get" action="consultar.php">
+            <label for="alumno_id">
+              ID:
+              <input name="id" type="number" />
+            </label>
+            <button type="submit">Consultar</button>
+          </form>
+        </fieldset>
+      </section>
+    </main>
+  </body>
+</html>
