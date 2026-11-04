@@ -1,64 +1,91 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Escuela</title>
-    <link href="../css/estilos.css" rel="stylesheet" />
-  </head>
-  <body>
-    <main>
-      <fieldset>
-        <legend>Registro de alumnos</legend>
-        <form method="post" action="guardar.php" class="form_registro">
-          <label for="nombre"
-            >Nombre:
-            <input
-              type="text"
-              name="nombre"
-              maxlength="150"
-              required
-              placeholder="Santiago Joestar"
-            />
-          </label>
-          <label for="correo"
-            >Correo:
-            <input
-              type="email"
-              name="correo"
-              required
-              placeholder="mandarino@gmail.com"
-            />
-          </label>
-          <label for="edad"
-            >Edad:
-            <input type="number" name="edad" required placeholder="20" />
-          </label>
-          <label for="carrera"
-            >Carrera:
-            <input
-              type="text"
-              name="carrera"
-              required
-              placeholder="Ingenieria en computación"
-            />
-          </label>
-          <button type="submit">Regidtrar</button>
-        </form>
-      </fieldset>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Escuela</title>
+		<!-- Enlaza la hoja de estilos -->
+		<link href="../css/estilos.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- main agrupa las dos tarjetas: registro a la izquierda y consulta a la derecha -->
+		<main class="contenedor_principal">
+			<!-- Tarjeta de registro: envía los datos a guardar.php con POST (los datos viajan en el cuerpo de la petición) -->
+			<fieldset class="tarjeta tarjeta_registro">
+				<legend class="titulo_tarjeta">Registro de alumnos</legend>
+				<!--  1. La función del formulario HTML. 
+Este formulario sirve para capturar los datos del alumno 
+(nombre, correo, edad y carrera) y enviarlos a guardar.php 
+para que se registren en la base de datos -->
+				<form method="post" action="guardar.php" class="form_registro">
+					<label for="nombre" class="campo"
+					>Nombre:
+						<input
+							type="text"
+							id="nombre"
+							name="nombre"
+							maxlength="100"
+							required
+							placeholder="Ingresa tu nombre"
+						/>
+					</label>
+					<label for="correo" class="campo"
+					>Correo:
+						<input
+							type="email"
+							id="correo"
+							name="correo"
+							required
+							placeholder="Ej: mandarino@gmail.com"
+						/>
+					</label>
+					<label for="edad" class="campo"
+					>Edad:
+						<input
+							type="number"
+							id="edad"
+							name="edad"
+							required
+							placeholder="Ej: 20"
+						/>
+					</label>
+					<label for="carrera" class="campo"
+					>Carrera:
+						<input
+							type="text"
+							id="carrera"
+							name="carrera"
+							required
+							placeholder="Ej: Ingenieria en computación"
+						/>
+					</label>
+					<button type="submit" class="boton_enviar">Registrar</button>
+				</form>
+			</fieldset>
 
-      <section>
-        <fieldset>
-          <legend>Consultar alumnos</legend>
-          <form method="get" action="consultar.php">
-            <label for="alumno_id">
-              ID:
-              <input name="id" type="number" />
-            </label>
-            <button type="submit">Consultar</button>
-          </form>
-        </fieldset>
-      </section>
-    </main>
-  </body>
+			<!-- 
+2. La diferencia entre GET y POST en su práctica. 
+- Registro (POST): los datos viajan dentro de la petición y no aparecen en la URL.
+Se usa aquí porque se guarda información y es más privado, aunque tampoco es seguro del todo
+porque se puede ver desde el navegador.
+- Consulta (GET): el id viaja en la URL (consultar.php?id=1). Lo uso porque solo busco información
+y así puedo repetir o compartir el enlace, aunque los datos son visibles para cualquiera. 
+-->
+
+			<!-- Sección de consulta: envía el id a consultar.php con GET (el id aparece en la URL: consultar.php?id=1) -->
+			<section class="seccion_consulta">
+				<fieldset class="tarjeta tarjeta_consulta">
+					<legend class="titulo_tarjeta">Consultar alumnos</legend>
+					<!-- 1. Este formulario pide un ID y lo manda a consultar.php para buscar a ese alumno -->
+					<form method="get" action="consultar.php" class="form_consulta">
+						<label for="alumno_id" class="campo">
+							ID:
+							<input id="alumno_id" name="id" type="number" min="1" required placeholder="1" />
+						</label>
+						<button type="submit" class="boton_enviar">Consultar</button>
+					</form>
+				</fieldset>
+			</section>
+		</main>
+	</body>
 </html>

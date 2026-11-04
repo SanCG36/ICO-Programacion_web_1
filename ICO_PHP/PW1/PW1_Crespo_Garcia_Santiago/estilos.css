@@ -1,0 +1,227 @@
+/* Paleta de colores guardados en variables para su reutilización*/
+:root {
+  --morado-noche: #1a0f2e;   /* fondo de la página y texto principal */
+  --morado-oscuro: #3b1b4f;  /* bordes de los campos y hover del botón */
+  --morado-medio: #7a2e6f;   /* botón de registro y foco de los campos */
+  --rosa-fuerte: #d6598f;    /* detalles: rayita del título */
+  --rosa-claro: #f4d7d4;     /* fondo de las tarjetas */
+  --coral: #ff6b6b;          /* botón de consulta */
+}
+
+/* Reinicio básico que  quita márgenes/rellenos por defecto del navegador y hace que el ancho incluya el relleno y el borde.
+   Tipo de fuente: se usan fuentes del sistema*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, Arial, sans-serif;
+}
+
+/* Fondo de color sólido que ocupa toda la pantalla y centra el contenido */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--morado-noche);
+}
+
+/* main coloca las dos tarjetas lado a lado; si no caben, la segunda baja */
+.contenedor_principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* La sección de consulta ocupa menos espacio que la de registro */
+.seccion_consulta {
+  flex: 1 1 250px;
+}
+
+.tarjeta_registro {
+  flex: 2 1 400px;
+}
+
+/* Tarjeta de color claro con bordes redondeados (se le quita el borde por defecto del fieldset) */
+.tarjeta {
+  background-color: var(--rosa-claro);
+  color: var(--morado-noche);
+  border: none;
+  border-radius: 5px;
+  padding: 25px 30px;
+  min-width: 0;
+}
+
+/* Título de cada tarjeta; float + width evita el comportamiento raro del legend dentro del fieldset */
+.titulo_tarjeta {
+  float: left;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Rayita de color debajo del título */
+.titulo_tarjeta::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background-color: var(--rosa-fuerte);
+}
+
+/* Los formularios se acomodan en una cuadrícula; el clear separa del título flotante */
+.form_registro {
+  clear: both;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 20px;
+}
+
+.form_consulta {
+  clear: both;
+  display: grid;
+  gap: 15px;
+}
+
+/* Cada etiqueta muestra su texto arriba y el campo debajo */
+.campo {
+  display: block;
+  font-weight: 500;
+}
+
+/* Campos de texto: fondo blanco, borde oscuro con base más gruesa y espacio interno a la izquierda */
+.campo input {
+  display: block;
+  height: 45px;
+  width: 100%;
+  margin-top: 5px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--morado-noche);
+  background-color: #fff;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid var(--morado-oscuro);
+  border-bottom-width: 2px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al escribir (o cuando el campo ya es válido) el borde cambia de color; el foco además lleva un halo visible */
+.campo input:focus,
+.form_registro .campo input:valid {
+  border-color: var(--morado-medio);
+}
+
+.campo input:focus {
+  box-shadow: 0 0 0 3px rgba(214, 89, 143, 0.4);
+}
+
+/* Botones de color sólido */
+.boton_enviar {
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: var(--morado-medio);
+  transition: background-color 0.3s ease;
+}
+
+.boton_enviar:hover,
+.boton_enviar:focus-visible {
+  background-color: var(--morado-oscuro);
+}
+
+/* El botón de consulta usa el coral para distinguirse; el texto oscuro mantiene buen contraste */
+.form_consulta .boton_enviar {
+  background-color: var(--coral);
+  color: var(--morado-noche);
+}
+
+.form_consulta .boton_enviar:hover,
+.form_consulta .boton_enviar:focus-visible {
+  background-color: var(--rosa-fuerte);
+}
+
+/* El botón de registro ocupa las dos columnas */
+.form_registro .boton_enviar {
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+
+/* Pantallas pequeñas: los campos pasan a una sola columna */
+@media (max-width: 584px) {
+  .form_registro {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Páginas de resultado (guardar.php y consultar.php) ---- */
+.seccion_resultado {
+  flex: 1 1 400px;
+  max-width: 520px;
+}
+
+/* Mensajes de éxito o error, con una franja a la izquierda */
+.mensaje {
+  clear: both;
+  padding: 12px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  border-left: 5px solid var(--coral);
+}
+
+.mensaje_exito {
+  border-left-color: var(--morado-medio);
+}
+
+/* Tabla con los datos del alumno consultado */
+.tabla_alumno {
+  clear: both;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.tabla_alumno th,
+.tabla_alumno td {
+  text-align: left;
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--rosa-claro);
+}
+
+.tabla_alumno th {
+  width: 35%;
+  color: var(--morado-medio);
+}
+
+/* Enlace para regresar al formulario */
+.enlace_volver {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 500;
+  color: var(--morado-medio);
+}
+
+.enlace_volver:hover {
+  color: var(--morado-oscuro);
+}
+
+/* Referencia */
+/* https://youtu.be/okbByPWS1Xc */
