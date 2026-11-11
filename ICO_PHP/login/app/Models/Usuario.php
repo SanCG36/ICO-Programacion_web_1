@@ -22,4 +22,8 @@ final class Usuario{
 		$consulta->execute(['nombre'=>$nombre,'correo'=>$correo,'hash'=>$hash]);
 		return (int) $pdo->lastInsertId();	
 	}
+
+	public function listar():array{
+		$consulta = 'SELECT id, nombre, correo, creado_en FROM usuarios ORDER BY id DESC';
+	}
 }
